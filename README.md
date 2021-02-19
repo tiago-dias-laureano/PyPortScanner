@@ -21,9 +21,19 @@ Para obter ajuda de como utilizar a ferramenta:
 ```python
 python pyps.py -h
 ```
-Para executar o scanner em um ip/site:
+Para executar o scanner em um site:
 ```python
 python pyps.py --url https://site.com.br/ 
+```
+
+Para executar o scanner em um ip:
+```python
+python pyps.py --ip 192.168.0.1
+```
+
+Para executar o scanner em um ip ou site no modo verbose:
+```python
+python pyps.py --url https://site.com.br/ --verbose True
 ```
 
 ## Contribuição
