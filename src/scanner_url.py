@@ -15,6 +15,8 @@ def scanner_url(args):
     elif 'https://' in args.url:
         url_parser = args.url.split('https://')
         url_parser = url_parser[1]
+    else:
+        url_parser = args.url
 
     csv_create.create_csv(url_parser)
 

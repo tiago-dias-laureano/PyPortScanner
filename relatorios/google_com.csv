@@ -1,20 +1,62 @@
-IP,PORTA,STATUS,SERVIÇO
-https://google.com,1,FECHADA,tcpmux
-https://google.com,5,FECHADA,rje
-https://google.com,7,FECHADA,echo
-https://google.com,9,FECHADA,descard
-https://google.com,11,FECHADA,systat
-https://google.com,13,FECHADA,daytime
-https://google.com,17,FECHADA,qotd
-https://google.com,18,FECHADA,message send protocol
-https://google.com,20,FECHADA,ftp
-https://google.com,21,FECHADA,ftp
-https://google.com,22,FECHADA,ssh
-https://google.com,23,FECHADA,telnet
-https://google.com,43,FECHADA,whois
-https://google.com,53,FECHADA,dns
-https://google.com,57,FECHADA,mtp
-https://google.com,443,ABERTA,https
-https://google.com,80,ABERTA,http
-https://google.com,3306,FECHADA,MySql System
-https://google.com,8080,FECHADA,http
+IP,PORTA,STATUS,SERVIÇO,VERSÃO
+google.com,0,FECHADA,Fortnite,
+google.com,1,FECHADA,tcpmux,
+google.com,5,FECHADA,rje,
+google.com,7,FECHADA,echo,
+google.com,9,FECHADA,descard,
+google.com,11,FECHADA,systat,
+google.com,13,FECHADA,daytime,
+google.com,17,FECHADA,qotd,
+google.com,18,FECHADA,message send protocol,
+google.com,19,FECHADA,chargen protocol,
+google.com,20,FECHADA,ftp,
+google.com,21,FECHADA,ftp,
+google.com,22,FECHADA,ssh,
+google.com,23,FECHADA,telnet,
+google.com,25,FECHADA,smtp,
+google.com,26,FECHADA,rsftp,
+google.com,35,FECHADA,qms magicolor 2 printer,
+google.com,37,FECHADA,time protocol,
+google.com,38,FECHADA,route access protocol,
+google.com,39,FECHADA,resource location protocol,
+google.com,41,FECHADA,graphics do lol,
+google.com,42,FECHADA,host name server,
+google.com,43,FECHADA,whois,
+google.com,49,FECHADA,tacacs,
+google.com,53,FECHADA,dns,
+google.com,57,FECHADA,mtp,
+google.com,67,FECHADA,bootp,
+google.com,68,FECHADA,bootp,
+google.com,69,FECHADA,tftp,
+google.com,70,FECHADA,gopher,
+google.com,79,FECHADA,finger protocol,
+google.com,80,ABERTA,http,
+google.com,81,FECHADA,torpark onion routing,
+google.com,82,FECHADA,torpark control park,
+google.com,88,FECHADA,kerberos,
+google.com,101,FECHADA,hostname,
+google.com,102,FECHADA,iso-tsap,
+google.com,107,FECHADA,remote telnet service,
+google.com,109,FECHADA,pop,
+google.com,110,FECHADA,pop3,
+google.com,111,FECHADA,rpc,
+google.com,113,FECHADA,ident,
+google.com,115,FECHADA,sftp,
+google.com,117,FECHADA,uucp-path,
+google.com,118,FECHADA,sql services,
+google.com,119,FECHADA,nntp,
+google.com,123,FECHADA,ntp,
+google.com,135,FECHADA,epmap,
+google.com,137,FECHADA,netbios,
+google.com,138,FECHADA,netbios,
+google.com,139,FECHADA,netbios,
+google.com,143,FECHADA,imap4,
+google.com,152,FECHADA,bftp,
+google.com,153,FECHADA,sgmp,
+google.com,156,FECHADA,sql ,
+google.com,158,FECHADA,dmsp,
+google.com,161,FECHADA,snmp,
+google.com,162,FECHADA,snmptrap,
+google.com,443,ABERTA,https,
+google.com,3306,FECHADA,MySql System,
+google.com,8080,FECHADA,http,
