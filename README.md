@@ -36,6 +36,9 @@ Para executar o scanner em um ip ou site no modo verbose:
 python pyps.py --url https://site.com.br/ --verbose True
 ```
 
+## Relatórios
+Todos os scanners realizados com o PyPS tem geração automática de um arquivo CVS contendo informações necessárias para fazer a ánalise geral dos serviços sendo utilizados.
+
 ## Contribuição
 Correções de bugs, implementação de features são bem-vindas. Para mudanças importantes, abra um problema primeiro para discutir o que você gostaria de mudar ou adicionar.
 
