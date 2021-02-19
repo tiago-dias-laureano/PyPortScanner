@@ -26,15 +26,21 @@ Para executar o scanner em um site:
 python pyps.py --url https://site.com.br/ 
 ```
 
+![alt text](https://i.ibb.co/BZ6cXRW/img1.png)
+
+
 Para executar o scanner em um ip:
 ```python
 python pyps.py --ip 192.168.0.1
 ```
 
+![alt text](https://i.ibb.co/Svj7QdX/im2.png)
+
 Para executar o scanner em um ip ou site no modo verbose:
 ```python
 python pyps.py --url https://site.com.br/ --verbose True
 ```
+![alt text](https://i.ibb.co/PFN0RSF/im3.png)
 
 ## Relatórios
 Todos os scanners realizados com o PyPS tem geração automática de um arquivo CSV contendo informações necessárias para fazer a ánalise geral dos serviços sendo utilizados. Criações de relatórios visuais será possivel em versões posteriores.
