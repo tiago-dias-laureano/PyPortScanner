@@ -14,29 +14,20 @@ Você pode baixar o repositório diretamente com o git clone
 git clone https://github.com/tiago-dias-laureano/PyPortScanner.git
 ```
 
-## Requerimentos
-
-Use o gerenciador de pacotes [pip](https://pip.pypa.io/en/stable/) para instalar a seguinte lib.
-
-```bash
-pip install requests
-```
 
 ## Como usar
 
-Para obter ajuda
+Para obter ajuda de como utilizar a ferramenta:
 ```python
 python pyps.py -h
 ```
-Para executar o scanner em um target
+Para executar o scanner em um ip/site:
 ```python
 python pyps.py --url https://site.com.br/ 
 ```
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+## Contribuição
+Correções de bugs, implementação de features são bem-vindas. Para mudanças importantes, abra um problema primeiro para discutir o que você gostaria de mudar ou adicionar.
 
-Please make sure to update tests as appropriate.
-
-## License
+## Licensa
 [MIT](https://choosealicense.com/licenses/mit/)
