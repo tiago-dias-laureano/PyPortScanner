@@ -1,0 +1,20 @@
+IP,PORTA,STATUS,SERVIÇO
+https://google.com,1,FECHADA,tcpmux
+https://google.com,5,FECHADA,rje
+https://google.com,7,FECHADA,echo
+https://google.com,9,FECHADA,descard
+https://google.com,11,FECHADA,systat
+https://google.com,13,FECHADA,daytime
+https://google.com,17,FECHADA,qotd
+https://google.com,18,FECHADA,message send protocol
+https://google.com,20,FECHADA,ftp
+https://google.com,21,FECHADA,ftp
+https://google.com,22,FECHADA,ssh
+https://google.com,23,FECHADA,telnet
+https://google.com,43,FECHADA,whois
+https://google.com,53,FECHADA,dns
+https://google.com,57,FECHADA,mtp
+https://google.com,443,ABERTA,https
+https://google.com,80,ABERTA,http
+https://google.com,3306,FECHADA,MySql System
+https://google.com,8080,FECHADA,http

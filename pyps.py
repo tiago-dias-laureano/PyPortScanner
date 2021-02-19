@@ -1,9 +1,6 @@
 import argparse
-import socket
-import datetime
-from src import code_info
-from src import main_ports
-from src import csv_create
+from src import scanner_ip
+from src import scanner_url
 
 parser = argparse.ArgumentParser(description='PyPortScanner v1.0')
 
@@ -19,67 +16,9 @@ parser.add_argument('--verbose',
                     )
 args = parser.parse_args()
 
-def scanner_ip(args):
-    verbose = "false"
-    ip = args.ip
-    verbose = bool(args.verbose)
-    csv_create.create_csv(ip)
-    print(f'[*] {datetime.datetime.now().strftime("%H:%M:%S")} [*] #> Scanner Iniciado No IP: {ip}')
-    for porta in main_ports.return_port():
-        conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        conn.settimeout(0.5)
-        resposta = conn.connect_ex((ip, porta))
-
-        if resposta == 0:
-            print(f'[*] {datetime.datetime.now().strftime("%H:%M:%S")} [*] #> A porta {porta} ({code_info.dict_de_code[str(porta)]}) está ABERTA!')
-            csv_create.make_csv(ip, porta, 'ABERTA', code_info.dict_de_code[str(porta)])
-        elif resposta == 111 or resposta == 13:   
-            if verbose:
-                print(f'[!] {datetime.datetime.now().strftime("%H:%M:%S")} [!] #> A conexão com a porta {porta} ({code_info.dict_de_code[str(porta)]}) foi RECUSADA / NEGADA!')
-            csv_create.make_csv(ip, porta, 'RECUSADA / NEGADA', code_info.dict_de_code[str(porta)])
-        else:
-            csv_create.make_csv(ip, porta, 'FECHADA', code_info.dict_de_code[str(porta)])
-            if verbose:
-                print(f'[*] {datetime.datetime.now().strftime("%H:%M:%S")} [*] #> A porta {porta} ({code_info.dict_de_code[str(porta)]}) está FECHADA!')
-            else:
-                pass
-
-def scanner_url(args):
-
-    url = args.url
-    verbose = bool(args.verbose)
-    csv_create.create_csv(url)
-    if 'http://' in args.url:
-        url_parser = args.url.split('http://')
-        url_parser = url_parser[1]
-    elif 'https://' in args.url:
-        url_parser = args.url.split('https://')
-        url_parser = url_parser[1]
-
-    ip = socket.gethostbyname(url_parser)
-
-    for porta in main_ports.return_port():
-        conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        conn.settimeout(0.5)
-        resposta = conn.connect_ex((ip, porta))
-
-        if resposta == 0:
-            csv_create.make_csv(url, porta, 'ABERTA', code_info.dict_de_code[str(porta)])
-            print(f'[*] {datetime.datetime.now().strftime("%H:%M:%S")} [*] #> A porta {porta} ({code_info.dict_de_code[str(porta)]}) está ABERTA!')
-        elif resposta == 111 or resposta == 13:    
-            csv_create.make_csv(url, porta, 'RECUSADA / NEGADA', code_info.dict_de_code[str(porta)])
-            if verbose:
-                print(f'[!] {datetime.datetime.now().strftime("%H:%M:%S")} [!] #> A conexão com a porta {porta} ({code_info.dict_de_code[str(porta)]}) foi RECUSADA / NEGADA!')
-        else:
-            csv_create.make_csv(ip, porta, 'FECHADA', code_info.dict_de_code[str(porta)])
-            if verbose:
-                print(f'[*] {datetime.datetime.now().strftime("%H:%M:%S")} [*] #> A porta {porta} ({code_info.dict_de_code[str(porta)]}) está FECHADA!')
-            else:
-                pass
-
 if args.url:
-    scanner_url(args)
+    scanner_url.scanner_url(args)
 elif args.ip:
-    scanner_ip(args)
+    scanner_ip.scanner_ip(args)
 else:
     print('Você precisa setar um argumento correto!')

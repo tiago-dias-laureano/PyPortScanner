@@ -3,7 +3,7 @@ import csv
 def create_csv(arg1):
     global arq
     nome_arquivo = arg1.replace('.','_')
-    arq = open(f'{nome_arquivo}.csv', 'w')
+    arq = open(f'relatorios/{nome_arquivo}.csv', 'w')
     esc = csv.writer(arq)
     esc.writerow(('IP', 'PORTA', 'STATUS', 'SERVIÇO'))
 
