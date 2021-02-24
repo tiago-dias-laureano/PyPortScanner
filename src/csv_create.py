@@ -1,5 +1,7 @@
-import csv
+# -*- coding: utf-8 -*-
 
+import csv
+import os
 
 def _sanitaze_filename(filename):
     return filename.replace('.','_')
@@ -7,8 +9,10 @@ def _sanitaze_filename(filename):
 
 def _write_csv_file(filename, content, is_header=False):
     filename = _sanitaze_filename(filename)
+    
+    reports_path = os.path.join('relatorios', f'{filename}.csv')
 
-    with open(f'relatorios/{filename}.csv', 'w', encoding='utf-8', newline='') as file:
+    with open(reports_path, 'w', encoding='utf-8', newline='') as file:
 
         esc = csv.writer(file)
 
