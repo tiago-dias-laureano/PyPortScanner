@@ -1,15 +1,15 @@
 import csv
 
-def create_csv(arg1):
+def create_csv(name):
     global arq
-    nome_arquivo = arg1.replace('.','_')
-    arq = open(f'relatorios/{nome_arquivo}.csv', 'w')
+    nome_arquivo = name.replace('.','_')
+    arq = open(f'relatorios/{nome_arquivo}.csv', 'w', encoding='utf-8', newline='')
     esc = csv.writer(arq)
     esc.writerow(('IP', 'PORTA', 'STATUS', 'SERVIÇO', 'VERSÃO'))
 
-def make_csv(arg1, arg2, arg3, arg4, arg5=""):
+def make_csv(ip, port, status, service, version=""):
     esc = csv.writer(arq)
-    esc.writerow((arg1, arg2, arg3, arg4, arg5))
+    esc.writerow((ip, port, status, service, version))
 
 def close_csv():
     arq.close()
