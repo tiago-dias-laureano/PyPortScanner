@@ -53,7 +53,7 @@ dict_de_code = {
     143:"imap4",
     152:"bftp",
     153:"sgmp",
-    156:"sql ",
+    156:"sql",
     158:"dmsp",
     161:"snmp",
     162:"snmptrap",
