@@ -20,11 +20,13 @@ def _print_log(msg):
 
 def ip(ip_address, verbose=False):
 
-    csv_create.create_csv(ip_address)
-
     _print_log(f'Scanner Iniciado No IP: {ip_address}')
 
-    reports = []  # A list of tuples of reports used for save in csv file
+    column_names = ('IP', 'PORTA', 'STATUS', 'SERVIÇO', 'VERSÃO')  # Header/Columns of csv file
+    
+    # A list of tuples of reports used for save in csv file.
+    # The first index has the column names.
+    reports = [column_names]
 
     for port in code_info.dict_de_code.keys():
         conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

@@ -7,7 +7,7 @@ def _sanitaze_filename(filename):
     return filename.replace('.','_')
 
 
-def _write_csv_file(filename, content, is_header=False):
+def _write_csv_file(filename, content):
     filename = _sanitaze_filename(filename)
     
     reports_path = os.path.join('relatorios', f'{filename}.csv')
@@ -16,17 +16,13 @@ def _write_csv_file(filename, content, is_header=False):
 
         esc = csv.writer(file)
 
-        if is_header:
-            esc.writerow(content)
-
-        else:
-            for c in content:
-                esc.writerow(c)
+        for c in content:
+            esc.writerow(c)
 
 
 def create_csv(filename):
-    _write_csv_file(filename, content=('IP', 'PORTA', 'STATUS', 'SERVIÇO', 'VERSÃO'), is_header=True)
+    _write_csv_file(filename, content=('IP', 'PORTA', 'STATUS', 'SERVIÇO', 'VERSÃO'))
 
 
-def make_csv(filename, content, is_header=False):
+def make_csv(filename, content):
     _write_csv_file(filename, content)
