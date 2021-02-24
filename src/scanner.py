@@ -37,18 +37,15 @@ def ip(ip_address, verbose=False):
             csv_create.make_csv(ip_address, port, 'ABERTA', code_info.dict_de_code[port], info)
 
         elif response == 111 or response == 13: 
+            csv_create.make_csv(ip_address, port, 'RECUSADA / NEGADA', code_info.dict_de_code[port])
+            
             if verbose:
-
                 _print_log(f'A conexão com a porta {port} ({code_info.dict_de_code[port]} foi RECUSADA / NEGADA!')
 
-            csv_create.make_csv(ip_address, port, 'RECUSADA / NEGADA', code_info.dict_de_code[port])
-
         else:
-
             csv_create.make_csv(ip_address, port, 'FECHADA', code_info.dict_de_code[port])
 
             if verbose:
-
                 _print_log(f'A porta {port} ({code_info.dict_de_code[port]}) está FECHADA!')
 
 
