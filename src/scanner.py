@@ -41,13 +41,15 @@ def ip(ip_address, verbose=False):
             reports.append((ip_address, port, 'ABERTA', code_info.dict_de_code[port], info))
 
         elif response == 111 or response == 13: 
-            reports.append((ip_address, port, 'RECUSADA / NEGADA', code_info.dict_de_code[port]))
+            # Last index is version column with a default value
+            reports.append((ip_address, port, 'RECUSADA / NEGADA', code_info.dict_de_code[port], 'N/D'))
 
             if verbose:
                 _print_log(f'A conexão com a porta {port} ({code_info.dict_de_code[port]} foi RECUSADA / NEGADA!')
 
         else:
-            reports.append((ip_address, port, 'FECHADA', code_info.dict_de_code[port]))
+            # Last index is version column with a default value
+            reports.append((ip_address, port, 'FECHADA', code_info.dict_de_code[port], 'N/D'))
 
             if verbose:
                 _print_log(f'A porta {port} ({code_info.dict_de_code[port]}) está FECHADA!')
