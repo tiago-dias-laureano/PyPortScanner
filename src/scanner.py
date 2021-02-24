@@ -24,6 +24,8 @@ def ip(ip_address, verbose=False):
 
     _print_log(f'Scanner Iniciado No IP: {ip_address}')
 
+    reports = []  # A list of tuples of reports used for save in csv file
+
     for port in code_info.dict_de_code.keys():
         conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         conn.settimeout(0.5)
@@ -33,20 +35,23 @@ def ip(ip_address, verbose=False):
             info = get_version.get_version(ip_address, port)
 
             _print_log(f'A porta {port} ({code_info.dict_de_code[port]}) está ABERTA! {info}')
-
-            csv_create.make_csv(ip_address, port, 'ABERTA', code_info.dict_de_code[port], info)
+            
+            reports.append((ip_address, port, 'ABERTA', code_info.dict_de_code[port], info))
 
         elif response == 111 or response == 13: 
-            csv_create.make_csv(ip_address, port, 'RECUSADA / NEGADA', code_info.dict_de_code[port])
-            
+            reports.append((ip_address, port, 'RECUSADA / NEGADA', code_info.dict_de_code[port]))
+
             if verbose:
                 _print_log(f'A conexão com a porta {port} ({code_info.dict_de_code[port]} foi RECUSADA / NEGADA!')
 
         else:
-            csv_create.make_csv(ip_address, port, 'FECHADA', code_info.dict_de_code[port])
+            reports.append((ip_address, port, 'FECHADA', code_info.dict_de_code[port]))
 
             if verbose:
                 _print_log(f'A porta {port} ({code_info.dict_de_code[port]}) está FECHADA!')
+
+    # Save all reports at once
+    csv_create.make_csv(filename=ip_address, content=reports)
 
 
 def url(url_address, verbose=False):
