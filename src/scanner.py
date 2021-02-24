@@ -50,3 +50,19 @@ def ip(ip_address, verbose=False):
             if verbose:
 
                 _print_log(f'A porta {port} ({code_info.dict_de_code[port]}) está FECHADA!')
+
+
+def url(url_address, verbose=False):
+
+    if 'http://' in url_address:
+        url_parser = url_address.split('http://')
+        url_parser = url_parser[1]
+
+    elif 'https://' in url_address:
+        url_parser = url_address.split('https://')
+        url_parser = url_parser[1]
+
+    else:
+        url_parser = url_address
+
+    ip(ip_address=socket.gethostbyname(url_parser))
