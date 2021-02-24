@@ -1,7 +1,6 @@
 import datetime
 import socket
 from src import code_info
-from src import main_ports
 from src import csv_create
 from src import get_version
 
