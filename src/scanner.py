@@ -69,4 +69,4 @@ def url(url_address, verbose=False):
     else:
         url_parser = url_address
 
-    ip(ip_address=socket.gethostbyname(url_parser))
+    ip(ip_address=socket.gethostbyname(url_parser), verbose=verbose)
