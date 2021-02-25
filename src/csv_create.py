@@ -1,15 +1,28 @@
+# -*- coding: utf-8 -*-
+
 import csv
+import os
 
-def create_csv(arg1):
-    global arq
-    nome_arquivo = arg1.replace('.','_')
-    arq = open(f'relatorios/{nome_arquivo}.csv', 'w')
-    esc = csv.writer(arq)
-    esc.writerow(('IP', 'PORTA', 'STATUS', 'SERVIÇO', 'VERSÃO'))
+def _sanitaze_filename(filename):
+    return filename.replace('.','_')
 
-def make_csv(arg1, arg2, arg3, arg4, arg5=""):
-    esc = csv.writer(arq)
-    esc.writerow((arg1, arg2, arg3, arg4, arg5))
 
-def close_csv():
-    arq.close()
+def _write_csv_file(filename, content):
+    filename = _sanitaze_filename(filename)
+    
+    reports_path = os.path.join('relatorios', f'{filename}.csv')
+
+    with open(reports_path, 'w', encoding='utf-8', newline='') as file:
+
+        esc = csv.writer(file)
+
+        for c in content:
+            esc.writerow(c)
+
+
+def create_csv(filename):
+    _write_csv_file(filename, content=('IP', 'PORTA', 'STATUS', 'SERVIÇO', 'VERSÃO'))
+
+
+def make_csv(filename, content):
+    _write_csv_file(filename, content)
