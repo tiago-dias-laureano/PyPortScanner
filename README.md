@@ -1,7 +1,7 @@
 # PyPortScanner
 
 [![Generic badge](https://img.shields.io/badge/build-passing-green.svg)](https://shields.io/)
-[![Generic badge](https://img.shields.io/badge/python-3.x-yellow.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/python-2.6|3.x-yellow.svg)](https://shields.io/)
 [![Generic badge](https://img.shields.io/badge/license-MIT-red.svg)](https://shields.io/)
 
 Um PortScanner desenvolvido em Python
